@@ -11,7 +11,7 @@
         const limiteSuperiorContainer = document.getElementById('limiteSuperiorContainer');
 
         const desmosCalculator = Desmos.Calculator(graphContainer);
-
+        //Graficacion
         integralType.addEventListener('change', function () {
             const tipo = integralType.value;
             if (tipo === 'definida') {
@@ -41,7 +41,7 @@
                 procedureDiv.innerHTML = 'Error al mostrar el procedimiento.';
             }
         }
-
+        // integral definida
         function calculateIntegral() {
             const expression = functionInput.value;
             const type = integralType.value;
@@ -74,7 +74,8 @@
             renderProcedure(steps);
             plotGraph(expression);
         }
-
+        
+        //Integral indefinida
         function calculateIndefiniteIntegral(expression, steps) {
             let integralResult = '';
 
@@ -185,7 +186,6 @@
                 tempResult += `= \\frac{x^2}{2} \\ln(x) - \\frac{x^2}{4} `;
             }
             
-
             integralResult = tempResult;
             return integralResult;
         }
